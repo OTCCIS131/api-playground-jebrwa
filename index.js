@@ -13,9 +13,9 @@ $(function () {
             loadName() {
                 this.loading = true
 
-                this.$http.get('http://www.comicvine.com/api/<resource>/?api_key=<775df1eea3760333ce81e39ada323b0e1cd62145>:<value>&format=json')
+                this.$http.get('http://www.comicvine.com/api/<resource>/?api_key=<api_key>&filter=<filter>:<value>&format=json')
                     .then(successCallback, errorCallback)
-
+                    
                     .then(resp => {
                         this.charicters = resp.body
                         this.loading = false
@@ -42,4 +42,5 @@ $(function () {
 
 // 775df1eea3760333ce81e39ada323b0e1cd62145
 // http://www.comicvine.com/api/<resource>/?api_key=<api_key>&filter=<filter>:<value>&format=json
+// https://comicvine.gamespot.com/api/documentation
 // https://comicvine.gamespot.com/api/activate
