@@ -13,7 +13,9 @@ $(function () {
             loadName() {
                 this.loading = true
 
-                this.$http.get('https://comicvine.gamespot.com/api/documentation#toc-0-3/characters')
+                this.$http.get('http://www.comicvine.com/api/<resource>/?api_key=<775df1eea3760333ce81e39ada323b0e1cd62145>:<value>&format=json')
+                    .then(successCallback, errorCallback)
+
                     .then(resp => {
                         this.charicters = resp.body
                         this.loading = false
@@ -21,7 +23,7 @@ $(function () {
             },
             selectCharicters(charicters) {
                 this.charicters = charicters
-                this.showing = 'people'
+                this.showing = 'charicters'
                 this.loadCharcters()
             },
             loadNames() {
@@ -37,3 +39,7 @@ $(function () {
     })
 
 })
+
+// 775df1eea3760333ce81e39ada323b0e1cd62145
+// http://www.comicvine.com/api/<resource>/?api_key=<api_key>&filter=<filter>:<value>&format=json
+// https://comicvine.gamespot.com/api/activate
