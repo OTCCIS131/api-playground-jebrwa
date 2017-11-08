@@ -13,7 +13,7 @@ $(function () {
             loadName() {
                 this.loading = true
 
-                this.$http.get('http://www.comicvine.com/api/<resource>/?api_key=<api_key>&filter=<filter>:<value>&format=json')
+                this.$http.get('http://www.comicvine.com/api/<character>/?api_key=<775df1eea3760333ce81e39ada323b0e1cd62145>&format=json')
                     .then(successCallback, errorCallback)
                     
                     .then(resp => {
