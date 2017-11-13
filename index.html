@@ -25,13 +25,13 @@
 <body>
     <div class="container-fluid">
         <div id="app">
-            <button class="btn btn-primary" :disabled="loading" @click="loadCharicters">
+            <button class="btn btn-danger" :disabled="loading" @click="loadName">
                 <i class="fa fa-spinner fa-spin" v-if="loading"></i>
                 Load Charicters
             </button>
             <ul class="list-group" v-if="showing == 'charicters'">
-                <li class="list-group-item" v-for="film in films" :key="charicters.id" @click="selectcharicters(chricters)">
-                    {{ charicters.real_name }} + {{ charicters.aliases }}) + {{ charicters.gender }} 
+                <li class="list-group-item" v-for="name in aliases" :key="charicters.real_name" @click="selectcharicters(charicters)">
+                    {{ charicters.real_name }} + {{ charicters.aliases }})
                 </li>
             </ul>
         </div>

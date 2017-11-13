@@ -13,34 +13,26 @@ $(function () {
             loadName() {
                 this.loading = true
 
-                this.$http.get('http://www.comicvine.com/api/<character>/?api_key=<775df1eea3760333ce81e39ada323b0e1cd62145>&format=json')
-                    .then(successCallback, errorCallback)
-                    
+                this.$http.get('http://www.comicvine.com/api/<resource>/?api_key=<775df1eea3760333ce81e39ada323b0e1cd62145>&filter=<real_name>:<value>&format=json')
                     .then(resp => {
                         this.charicters = resp.body
                         this.loading = false
                     })
             },
-            selectCharicters(charicters) {
+            loadCharicters(charicters) {
                 this.charicters = charicters
                 this.showing = 'charicters'
                 this.loadCharcters()
             },
-            loadNames() {
-                this.name = []
-                this.name.aliases.forEach(charicters => {
-                    this.$http.get(name)
-                        .then(resp => {
-                            this.name.push(resp.body)
-                        })
-                })
-            }
         }
     })
 
 })
 
-// 775df1eea3760333ce81e39ada323b0e1cd62145
-// http://www.comicvine.com/api/<resource>/?api_key=<api_key>&filter=<filter>:<value>&format=json
-// https://comicvine.gamespot.com/api/documentation
-// https://comicvine.gamespot.com/api/activate
+/**
+ * API Info
+ * KEY - 775df1eea3760333ce81e39ada323b0e1cd62145
+ * http://www.comicvine.com/api/<resource>/?api_key=<api_key>&filter=<filter>:<value>&format=json
+ * https://comicvine.gamespot.com/api/documentation
+ * https://comicvine.gamespot.com/api/activate
+ */
